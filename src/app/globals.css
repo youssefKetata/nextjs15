@@ -25,3 +25,159 @@ body {
   place-items: center;
   padding: 4rem;
 }
+
+.password-form {
+  max-width: 300px;
+  margin: 2rem;
+  position: relative;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tooltip {
+  position: absolute;
+  top: calc(100% + 10px); /* Added space for arrow */
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  z-index: 10;
+  font-size: 0.9rem;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 20px; /* Adjust as needed */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* Border color variations */
+&.strength-weak::before {
+  border-bottom-color: #fff8f8;
+}
+&.strength-medium::before {
+  border-bottom-color: #fff9e6;
+}
+&.strength-strong::before {
+  border-bottom-color: #f0fff4;
+}
+&.strength-very-strong::before {
+  border-bottom-color: #e3f2fd;
+}
+
+/* Strength line colors */
+.strength-weak {
+  border: 1px solid #ffd7d5;
+  background: #fff8f8;
+}
+.strength-medium {
+  border: 1px solid #ffe08c;
+  background: #fff9e6;
+}
+.strength-strong {
+  border: 1px solid #a5d6a7;
+  background: #f0fff4;
+}
+.strength-very-strong {
+  border: 1px solid #81d4fa;
+  background: #e3f2fd;
+}
+
+.base-requirement {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.strength-lines {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 1rem;
+}
+
+.strength-line {
+  height: 4px;
+  flex: 1;
+  background: #ddd;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.active-0 {
+  background: #ff4444;
+}
+.active-1 {
+  background: #ffdd44;
+}
+.active-2 {
+  background: #a5d6a7;
+}
+.active-3 {
+  background: #4caf50;
+}
+
+.active-4 {
+  background: #4caf50;
+}
+
+.conditions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.condition {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+}
+
+.dot {
+  color: #999;
+}
+
+.check {
+  color: #4caf50;
+}
+
+.errors {
+  color: #dc3545;
+  margin: 1rem 0;
+}
+
+.error {
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}

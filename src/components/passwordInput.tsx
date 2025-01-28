@@ -24,7 +24,7 @@ const PasswordSchema = z
 
 export default function PasswordInput() {
   const [password, setPassword] = useState("");
-  const [isFocused, setIsFocused] = useState(false);
+  const [isFocused, setIsFocused] = useState(true);
   const ref = useRef<HTMLInputElement>(null);
   const [errors, setErrors] = useState<string[]>([]);
   const [conditions, setConditions] = useState<ConditionStatus>({
@@ -147,133 +147,6 @@ export default function PasswordInput() {
       )}
 
       <button type="submit">Submit</button>
-      <style jsx>{`
-        .password-form {
-          max-width: 300px;
-          margin: 2rem;
-          position: relative;
-        }
-
-        .input-container {
-          position: relative;
-          margin-bottom: 1rem;
-        }
-
-        input {
-          width: 100%;
-          padding: 0.5rem;
-          margin-top: 0.5rem;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-        }
-
-        .tooltip {
-          position: absolute;
-          top: 0;
-          left: 0;
-          top: calc(100% + 0.5rem);
-          width: 100%;
-          padding: 1rem;
-          border-radius: 4px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-          background: white;
-          z-index: 10;
-          font-size: 0.9rem;
-          border: 1px solid #ddd;
-        }
-
-        .tooltip::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          right: -8px; /* Position the arrow on the right edge of the tooltip */
-          width: 0;
-          height: 0;
-          border-left: 8px solid solid transparent;
-          border-right: 8px solid transparent;
-          border-top: 8px solid #ddd; /* Match the tooltip's background */
-          transform: translateY(-50%);
-        }
-
-        .base-requirement {
-          margin-bottom: 1rem;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        .strength-lines {
-          display: flex;
-          gap: 2px;
-          margin-bottom: 1rem;
-        }
-
-        .strength-line {
-          height: 4px;
-          flex: 1;
-          background: #ddd;
-          border-radius: 2px;
-          transition: all 0.3s ease;
-        }
-
-        .active-0 {
-          background: #ff4444;
-        }
-        .active-1 {
-          background: #ffdd44;
-        }
-        .active-2 {
-          background: #a5d6a7;
-        }
-        .active-3 {
-          background: #4caf50;
-        }
-
-        .active-4 {
-          background: #4caf50;
-        }
-
-        .conditions {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-
-        .condition {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          color: #666;
-        }
-
-        .dot {
-          color: #999;
-        }
-
-        .check {
-          color: #4caf50;
-        }
-
-        .errors {
-          color: #dc3545;
-          margin: 1rem 0;
-        }
-
-        .error {
-          font-size: 0.9rem;
-          margin: 0.25rem 0;
-        }
-
-        button {
-          padding: 0.5rem 1rem;
-          background: #007bff;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          width: 100%;
-        }
-      `}</style>
     </form>
   );
 }
